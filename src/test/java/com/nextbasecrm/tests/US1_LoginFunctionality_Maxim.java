@@ -29,6 +29,7 @@ public class US1_LoginFunctionality_Maxim {
         FileInputStream file = new FileInputStream("configuration.properties");
         properties.load(file);
         driver = WebDriverFactory.getDriver(properties.getProperty("browser"));
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
